@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    {% load static %}
+    {% load bootstrap_icons %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'meetup/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'meetup/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
+
+</head>
+<body>
+<label class="form-label" for="customFile">update file pcap type</label>
+<input type="file" class="form-control" id="customFile" accept=".pcap" multiple/>
+<br>
+<button type="button" class="btn btn-success" onclick="">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+         class="bi bi-play" viewBox="0 0 20 20">
+        <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+              style="text-align: center"/>
+    </svg>
+    Run
+</button>
+<br>
+<hr>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">ip src</th>
+        <th scope="col">port src</th>
+        <th scope="col">ip dest</th>
+        <th scope="col">port dest</th>
+        <th scope="col">classifier</th>
+    </tr>
+    </thead>
+    <tbody>
+{#    <tr>#}
+{#        <th scope="row">{{ forloop.counter }}</th>#}
+{#        <td>{{ res.title }}</td>#}
+{#        <td>{{ res.description }}</td>#}
+{#        <td>{{ res.slug }}</td>#}
+{#        <td>{{ res.port_dest }}</td>#}
+{#        <td>{{ res.classifier }}</td>#}
+{#    </tr>#}
+    </tbody>
+</table>
+</body>
+</html>

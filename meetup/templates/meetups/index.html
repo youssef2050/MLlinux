@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Meetups</title>
+    {% load static %}
+    {% load bootstrap_icons %}
+    <link href="{% static 'meetup/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'meetup/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Interface</th>
+        <th scope="col">Selected</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for foo in result %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ foo }}</td>
+            <td>
+                <a href="{% url 'run' foo %}" type="button" class="btn btn-success run">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                         class="bi bi-play" viewBox="0 0 20 20">
+                        <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+                              style="text-align: center"/>
+                    </svg>
+                    Run
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
