@@ -67,8 +67,18 @@
                             + '<td>' + data['data'][i].classification + '</td>'
                             + '</tr>');
                     }
+                    $.ajax({
+                        headers: {'X-CSRFToken': csrftoken},
+                        type: "POST",
+                        url: "{% url 'runCapture' %}",
+                        data: {interface: '{{ title }}'},
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data['massage'])
+                        }
+                    });
                 }
-            })
+            });
 
             $('.stop').click(function () {
                 $.ajax({
@@ -108,6 +118,7 @@
                     dataType: "json",
                     data: {'interface': '{{ title }}'},
                     success: function (data) {
+                        console.log(data['massage']);
                         $.ajax({
                             headers: {'X-CSRFToken': csrftoken},
                             type: "POST",
@@ -130,7 +141,8 @@
                     }
                 });
             });
-        });
+        })
+        ;
     </script>
     </tbody>
 </table>

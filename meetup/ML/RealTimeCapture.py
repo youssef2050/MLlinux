@@ -14,9 +14,9 @@ class RealTimeCapture:
         return address.keys()
 
     @staticmethod
-    def liveCapture(interface, outputFilePath, pcakets=500):
+    def liveCapture(interface, outputFilePath, timeout=3600):
         stream = os.popen(
-            'tcpdump -c ' + str(pcakets) + ' -w uploads/files/' + str(outputFilePath) + '.pcap -i ' + interface)
+            'timeout ' + str(timeout) + ' tcpdump -w uploads/files/' + str(outputFilePath) + '.pcap -i ' + interface)
         print(stream)
 
     @staticmethod
