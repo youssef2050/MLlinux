@@ -4,7 +4,7 @@ from csv import reader
 from meetup.models import ResultML
 
 
-def convertToCSV(path):
+def convertToCSV(path): # pre processing
     with open(path, 'r') as read_obj:
         csv_reader = reader(read_obj)
         for row in csv_reader:

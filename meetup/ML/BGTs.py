@@ -32,7 +32,7 @@ class BGTs:
             return names[1]
 
     @staticmethod
-    def loadBGTsModel():
+    def loadBGTsModel(): # 95%
         filename = 'meetup/ML/models/BGTs_model.sav'
         BGTsModel = pickle.load(open(filename, 'rb'))
         return BGTsModel

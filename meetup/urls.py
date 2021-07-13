@@ -7,6 +7,7 @@ urlpatterns = [
     path('getData', views.getData, name='getData'),
     path('stop', views.stopCapture, name='stop'),
     path('run', views.runLiveCapture, name='runCapture'),
+    path('uplaods',views.uploadFiles,name = 'upload'),
     path('<interface>', views.runTime, name='run'),
 
 ]
